@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Chaitanya Khairnar | Data Scientist</title>
+
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+:root{
+  --primary:#00e5ff;
+  --text:#e5e7eb;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body{
+  font-family:"Segoe UI",sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(0,229,255,0.15), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(0,229,255,0.12), transparent 40%),
+    linear-gradient(135deg, #020617, #000000);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size:60px 60px;
+  z-index:-1;
+  animation:gridMove 25s linear infinite;
+}
+@keyframes gridMove{
+  from{transform:translateY(0);}
+  to{transform:translateY(60px);}
+}
+
+/* NAVBAR */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:18px 10%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:1000;
+}
+nav.scrolled{
+  background:#000;
+  box-shadow:0 0 20px rgba(0,229,255,.4);
+}
+nav h1{color:var(--primary);}
+nav ul{display:flex; gap:25px;}
+nav ul a{
+  color:#cbd5f5;
+  text-decoration:none;
+}
+nav ul a:hover{color:var(--primary);}
+
+/* HERO */
+header{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero h2{
+  font-size:44px;
+  color:var(--primary);
+}
+.hero h3{margin:10px 0;font-size:22px;}
+.hero p{
+  max-width:650px;
+  margin:15px auto 30px;
+  color:#cbd5f5;
+}
+.hero .btns a{
+  padding:12px 26px;
+  margin:0 8px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+  border:2px solid var(--primary);
+  color:var(--primary);
+  transition:.3s;
+}
+.hero .btns a:hover{
+  background:var(--primary);
+  color:#000;
+  box-shadow:0 0 25px var(--primary);
+}
+
+/* SECTION */
+section{padding:80px 10%;}
+.title{
+  font-size:28px;
+  margin-bottom:35px;
+  color:var(--primary);
+  text-align:center;
+}
+.title::after{
+  content:"";
+  display:block;
+  width:80px;
+  height:3px;
+  background:var(--primary);
+  margin:12px auto 0;
+}
+
+/* SKILLS */
+.skills{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:20px;
+}
+.skill{
+  text-align:center;
+  padding:25px;
+  border-radius:16px;
+  border:1px solid var(--primary);
+}
+.skill i{
+  font-size:36px;
+  color:var(--primary);
+  margin-bottom:10px;
+}
+.skill:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 30px var(--primary);
+}
+
+/* PROJECTS */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:25px;
+}
+.project{
+  padding:25px;
+  border-radius:18px;
+  border:1px solid var(--primary);
+}
+.project h3{color:var(--primary);}
+.project p{margin:10px 0;color:#cbd5f5;}
+.project a{
+  display:inline-block;
+  margin-top:10px;
+  color:var(--primary);
+  text-decoration:none;
+  font-weight:600;
+}
+.project a:hover{
+  text-shadow:0 0 10px var(--primary);
+}
+.project:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 35px var(--primary);
+}
+
+/* CONTACT */
+.contact{text-align:center;}
+.contact a{
+  color:var(--primary);
+  margin:0 12px;
+  font-size:24px;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  color:#94a3b8;
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:.8s;
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<nav id="nav">
+  <h1>Portfolio</h1>
+  <ul>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </ul>
+</nav>
+
+<header>
+  <div class="hero">
+    <h2>Chaitanya Khairnar</h2>
+    <h3 id="typing"></h3>
+    <p>
+      Aspiring Data Scientist with hands-on experience in machine learning,
+      data analysis, and real-world ML projects.
+    </p>
+    <div class="btns">
+      <a href="#projects">View Projects</a>
+      <a href="Chaitanya_Khairnar_Resume.pdf" download>Download CV</a>
+    </div>
+  </div>
+</header>
+
+<section id="skills">
+  <h2 class="title">Skills</h2>
+  <div class="skills">
+    <div class="skill reveal"><i class="fa-brands fa-python"></i><p>Python</p></div>
+    <div class="skill reveal"><i class="fa-solid fa-database"></i><p>SQL</p></div>
+    <div class="skill reveal"><i class="fa-solid fa-chart-line"></i><p>Data Analysis</p></div>
+    <div class="skill reveal"><i class="fa-solid fa-brain"></i><p>Machine Learning</p></div>
+    <div class="skill reveal"><i class="fa-solid fa-chart-pie"></i><p>Power BI / Tableau</p></div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="title">Projects</h2>
+
+  <div class="projects">
+
+    <div class="project reveal">
+      <h3>Diamond Price Prediction</h3>
+      <p>Regression-based ML model to predict diamond prices using carat, cut, color, and clarity.</p>
+      <a href="https://github.com/Chaitanya699/DiamondPricePrediction_DS_project" target="_blank">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
+    </div>
+
+    <div class="project reveal">
+      <h3>Phishing Website Classifier</h3>
+      <p>Machine learning classifier to detect phishing websites using URL and domain features.</p>
+      <a href="https://github.com/Chaitanya699/Phising-Classifier" target="_blank">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
+    </div>
+
+    <div class="project reveal">
+      <h3>Customer Categorizer</h3>
+      <p>Customer segmentation system based on purchasing behavior and demographic patterns.</p>
+      <a href="https://github.com/Chaitanya699/Customer-Categorizer" target="_blank">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
+    </div>
+
+    <div class="project reveal">
+      <h3>Spam Detection Project</h3>
+      <p>NLP-based spam detection model to classify messages as spam or legitimate.</p>
+      <a href="https://github.com/Chaitanya699/Spam-Detection-Project" target="_blank">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
+    </div>
+
+    <div class="project reveal">
+      <h3>Climate Visibility Prediction</h3>
+      <p>ML model to predict visibility using weather attributes like humidity and temperature.</p>
+      <a href="https://github.com/Chaitanya699/Climate-visibility-ML-Project" target="_blank">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
+    </div>
+
+    <div class="project reveal">
+      <h3>Myntra Scraper & Analysis</h3>
+      <p>Web scraping project to collect Myntra product data and perform trend analysis.</p>
+      <a href="https://github.com/Chaitanya699/Myntra-scrapper-ML-Project" target="_blank">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact" class="contact reveal">
+  <h2 class="title">Contact</h2>
+  <a href="tel:9284426130"><i class="fa-solid fa-phone"></i></a>
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=chaitanyakhairnar@hotmail.com" target="_blank">
+    <i class="fa-solid fa-envelope"></i>
+  </a>
+  <a href="https://github.com/Chaitanya699" target="_blank"><i class="fa-brands fa-github"></i></a>
+  <a href="https://www.linkedin.com/in/chaitanya-khairnar-6aa6ab217/" target="_blank">
+    <i class="fa-brands fa-linkedin"></i>
+  </a>
+</section>
+
+<footer>
+  © 2026 Chaitanya Khairnar | Data Scientist
+</footer>
+
+<script>
+window.addEventListener("scroll",()=>{
+  nav.classList.toggle("scrolled",window.scrollY>50);
+});
+
+const text="Data Scientist | Data Analyst | ML Enthusiast";
+let i=0;
+function type(){
+  if(i<text.length){
+    typing.innerHTML+=text.charAt(i);
+    i++;
+    setTimeout(type,80);
+  }
+}
+type();
+
+const reveals=document.querySelectorAll(".reveal");
+window.addEventListener("scroll",()=>{
+  reveals.forEach(r=>{
+    if(r.getBoundingClientRect().top < window.innerHeight-100){
+      r.classList.add("active");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
